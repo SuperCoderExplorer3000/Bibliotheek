@@ -9,13 +9,17 @@ namespace Presentatie_Bibliotheek
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private Controller _controller = new Controller();
 
+
+
+
         private void LogIn_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

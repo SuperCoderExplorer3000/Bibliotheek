@@ -59,6 +59,7 @@
             tbWachtwoord.Name = "tbWachtwoord";
             tbWachtwoord.Size = new Size(437, 27);
             tbWachtwoord.TabIndex = 2;
+            tbWachtwoord.UseSystemPasswordChar = true;
             // 
             // label1
             // 

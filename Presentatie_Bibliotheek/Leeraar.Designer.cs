@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Leeraar";
+            lbOverzicht = new ListBox();
+            btnBoekToevoegen = new Button();
+            btnRefresh = new Button();
+            SuspendLayout();
+            // 
+            // lbOverzicht
+            // 
+            lbOverzicht.FormattingEnabled = true;
+            lbOverzicht.Location = new Point(12, 12);
+            lbOverzicht.Name = "lbOverzicht";
+            lbOverzicht.Size = new Size(525, 404);
+            lbOverzicht.TabIndex = 0;
+            // 
+            // btnBoekToevoegen
+            // 
+            btnBoekToevoegen.Location = new Point(555, 12);
+            btnBoekToevoegen.Name = "btnBoekToevoegen";
+            btnBoekToevoegen.Size = new Size(233, 55);
+            btnBoekToevoegen.TabIndex = 1;
+            btnBoekToevoegen.Text = "Voeg Boek Toe";
+            btnBoekToevoegen.UseVisualStyleBackColor = true;
+            btnBoekToevoegen.Click += btnBoekToevoegen_Click;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(555, 362);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(96, 54);
+            btnRefresh.TabIndex = 2;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // Leeraar
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnRefresh);
+            Controls.Add(btnBoekToevoegen);
+            Controls.Add(lbOverzicht);
+            Name = "Leeraar";
+            Text = "Leeraar";
+            Load += Leeraar_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ListBox lbOverzicht;
+        private Button btnBoekToevoegen;
+        private Button btnRefresh;
     }
 }
