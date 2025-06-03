@@ -31,6 +31,9 @@
             lbOverzicht = new ListBox();
             btnBoekToevoegen = new Button();
             btnRefresh = new Button();
+            btnUpdate = new Button();
+            btnVerwijderen = new Button();
+            btnGebruikers = new Button();
             SuspendLayout();
             // 
             // lbOverzicht
@@ -45,7 +48,7 @@
             // 
             btnBoekToevoegen.Location = new Point(555, 12);
             btnBoekToevoegen.Name = "btnBoekToevoegen";
-            btnBoekToevoegen.Size = new Size(233, 55);
+            btnBoekToevoegen.Size = new Size(233, 40);
             btnBoekToevoegen.TabIndex = 1;
             btnBoekToevoegen.Text = "Voeg Boek Toe";
             btnBoekToevoegen.UseVisualStyleBackColor = true;
@@ -61,11 +64,44 @@
             btnRefresh.UseVisualStyleBackColor = true;
             btnRefresh.Click += btnRefresh_Click;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(555, 58);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(233, 39);
+            btnUpdate.TabIndex = 3;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnVerwijderen
+            // 
+            btnVerwijderen.Location = new Point(555, 103);
+            btnVerwijderen.Name = "btnVerwijderen";
+            btnVerwijderen.Size = new Size(233, 43);
+            btnVerwijderen.TabIndex = 4;
+            btnVerwijderen.Text = "Boek Verwijderen";
+            btnVerwijderen.UseVisualStyleBackColor = true;
+            btnVerwijderen.Click += btnVerwijderen_Click;
+            // 
+            // btnGebruikers
+            // 
+            btnGebruikers.Location = new Point(555, 152);
+            btnGebruikers.Name = "btnGebruikers";
+            btnGebruikers.Size = new Size(233, 41);
+            btnGebruikers.TabIndex = 5;
+            btnGebruikers.Text = "gebruikers";
+            btnGebruikers.UseVisualStyleBackColor = true;
+            btnGebruikers.Click += btnGebruikers_Click;
+            // 
             // Leeraar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGebruikers);
+            Controls.Add(btnVerwijderen);
+            Controls.Add(btnUpdate);
             Controls.Add(btnRefresh);
             Controls.Add(btnBoekToevoegen);
             Controls.Add(lbOverzicht);
@@ -80,5 +116,8 @@
         private ListBox lbOverzicht;
         private Button btnBoekToevoegen;
         private Button btnRefresh;
+        private Button btnUpdate;
+        private Button btnVerwijderen;
+        private Button btnGebruikers;
     }
 }

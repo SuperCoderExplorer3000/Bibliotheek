@@ -9,6 +9,7 @@ namespace Bibliotheek.business
     public class Gebruiker
     {
         //instantievariabelen
+        private int gebruikerID;
         private string wachtwoord;
         private string gebruikersnaam;
         private string naam;
@@ -17,6 +18,12 @@ namespace Bibliotheek.business
         private int rechtID;
 
         //properties
+
+        public int GebruikerID
+        {
+            get { return gebruikerID; }
+            set { gebruikerID = value; }
+        }
         public string Wachtwoord
         {
             get { return wachtwoord; }
@@ -57,6 +64,7 @@ namespace Bibliotheek.business
 
         public Gebruiker()
         {
+            GebruikerID = 0;
             Wachtwoord = string.Empty;
             Gebruikersnaam = string.Empty;
             Naam = string.Empty;
@@ -71,6 +79,25 @@ namespace Bibliotheek.business
         {
             Gebruikersnaam = gebruikersnaam;
             Wachtwoord = wachtwoord;
+        }
+
+        //constructor voor het toevoegen van een gebruiker
+
+        public Gebruiker(string wachtwoord, string gebruikersnaam, string naam, string voornaam, string email, int rechtID)
+        {
+            Wachtwoord = wachtwoord;
+            Gebruikersnaam = gebruikersnaam;
+            Naam = naam;
+            Voornaam = voornaam;
+            Email = email;
+            RechtID = rechtID;
+
+        }
+
+        //overide string voor het weergeven van de gebruiker
+        public override string ToString()
+        {
+            return $"{GebruikerID}. {Voornaam} {Naam} ({Gebruikersnaam}) - Email: {Email}";
         }
     }
 }

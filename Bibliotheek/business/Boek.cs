@@ -110,10 +110,25 @@ namespace Bibliotheek.business
             Graad = graad;
         }
 
+        //constructor met parameters voor het wijzigen van de boeken    
+
+        public Boek(int boekid, int isbn, int paginas, string titel, int genreid, string uitgever, string auteur, string taal, int graad)
+        {
+            Boekid = boekid;
+            Isbn = isbn;
+            Paginas = paginas;
+            Titel = titel;
+            Genreid = genreid;
+            Uitgever = uitgever;
+            Auteur = auteur;
+            Taal = taal;
+            Graad = graad;
+        }
+
         //override string
         public override string ToString()
         {
-            return Titel + " - " + Auteur;
+            return Boekid + ". " + Titel + " - " + Auteur;
         }
     }
 }
