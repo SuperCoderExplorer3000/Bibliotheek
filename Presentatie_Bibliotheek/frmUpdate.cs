@@ -71,6 +71,7 @@ namespace Presentatie_Bibliotheek
             {
                 MessageBox.Show($"Er is een fout opgetreden: {ex.Message}", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Close();
 
         }
     }

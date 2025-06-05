@@ -32,6 +32,8 @@
             btnVerwijder = new Button();
             btnUpdate = new Button();
             lbGebruikers = new ListBox();
+            btnRefresh = new Button();
+            btnReturn = new Button();
             SuspendLayout();
             // 
             // btnVoegToe
@@ -72,11 +74,33 @@
             lbGebruikers.Size = new Size(524, 384);
             lbGebruikers.TabIndex = 3;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(570, 365);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(108, 41);
+            btnRefresh.TabIndex = 4;
+            btnRefresh.Text = "refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // btnReturn
+            // 
+            btnReturn.Location = new Point(684, 365);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(104, 41);
+            btnReturn.TabIndex = 5;
+            btnReturn.Text = "Return";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // frmGebruikers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnReturn);
+            Controls.Add(btnRefresh);
             Controls.Add(lbGebruikers);
             Controls.Add(btnUpdate);
             Controls.Add(btnVerwijder);
@@ -93,5 +117,7 @@
         private Button btnVerwijder;
         private Button btnUpdate;
         private ListBox lbGebruikers;
+        private Button btnRefresh;
+        private Button btnReturn;
     }
 }

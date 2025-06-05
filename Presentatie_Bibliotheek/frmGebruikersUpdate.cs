@@ -51,6 +51,7 @@ namespace Presentatie_Bibliotheek
             {
                 MessageBox.Show(ex.Message, "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Close();
 
         }
     }

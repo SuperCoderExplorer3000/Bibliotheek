@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,6 +38,8 @@ namespace Presentatie_Bibliotheek
             _controller.AddGebruiker(naam, gebruikersnaam, voornaam, email, wachtwoord, rechtID.ToString());
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("De gebruiker: " + gebruikersnaam + " is toegevoegd.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
+        
     }
 }

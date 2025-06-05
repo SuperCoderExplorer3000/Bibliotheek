@@ -73,5 +73,25 @@ namespace Presentatie_Bibliotheek
             frmGebruikersUpdate frm = new frmGebruikersUpdate();
             frm.ShowDialog();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            // Refresh de lijst van gebruikers
+            try
+            {
+                _controller = new Controller();
+                lbGebruikers.DataSource = _controller.GetGebruikers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+           
+        }
     }
 }

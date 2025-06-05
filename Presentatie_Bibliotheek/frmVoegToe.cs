@@ -56,6 +56,7 @@ namespace Presentatie_Bibliotheek
             this.DialogResult = DialogResult.OK;
 
             MessageBox.Show("het boek: " + titel + "is toegevoegd");
+            this.Close();
         }
     }
 }
