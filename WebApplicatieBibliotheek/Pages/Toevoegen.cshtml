@@ -1,0 +1,53 @@
+﻿@page
+@model WebApplicatieBibliotheek.Pages.ToevoegenModel
+@{
+	<h1>Boek toevoegen</h1>
+
+	<form method="post">
+		<div class="form-group">
+			<label for="isbn">ISBN</label>
+			<input type="text" class="form-control" id="isbn" name="isbn" required>
+		</div>
+		<div class="form-group">
+			<label for="paginas">Paginas</label>
+			<input type="number" class="form-control" id="paginas" name="paginas" required>
+		</div>
+		<div class="form-group">
+			<label for="titel">Titel</label>
+			<input type="text" class="form-control" id="titel" name="titel" required>
+		</div>
+		<div class="form-group">
+			<label for="genreid">Genre ID</label>
+			<input type="number" class="form-control" id="genreid" name="genreid" required>
+		</div>
+		<div class="form-group">
+			<label for="uitgever">Uitgever</label>
+			<input type="text" class="form-control" id="uitgever" name="uitgever" required>
+		</div>
+		<div class="form-group">
+			<label for="auteur">Auteur</label>
+			<input type="text" class="form-control" id="auteur" name="auteur" required>
+		</div>
+		<div class="form-group">
+			<label for="taal">Taal</label>
+			<input type="text" class="form-control" id="taal" name="taal" required>
+		</div>
+		<div class="form-group">
+			<label for="graad">Graad</label>
+			<input type="text" class="form-control" id="graad" name="graad" required>
+		</div>
+		
+		<br />
+	<button type="submit" class="btn btn-primary">Toevoegen</button>
+	</form>
+
+	@if (Model.Bericht != null)
+	{
+		<div class="alert alert-info mt-3">
+			@Model.Bericht
+		</div>
+	}
+
+
+
+}

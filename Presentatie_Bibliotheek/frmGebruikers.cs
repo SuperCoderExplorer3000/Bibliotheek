@@ -91,7 +91,12 @@ namespace Presentatie_Bibliotheek
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
-           
+
+        }
+
+        private void tbSearch(object sender, EventArgs e)
+        {
+
         }
     }
 }

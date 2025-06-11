@@ -1,0 +1,16 @@
+﻿@page
+@model WebApplicatieBibliotheek.Pages.VerwijderenModel
+@{
+	ViewData["Title"] = "Verwijderen";
+
+	<h1> Boek verwijderen </h1>
+
+	<form method="post">
+	<div class="form-group">
+			<label for="boekid">Boek ID</label>
+			<input type="number" class="form-control" id="boekid" name="boekid" required>
+		</div>
+		<br />
+		<button type="submit" class="btn btn-danger">Verwijderen</button>
+	</form>
+}

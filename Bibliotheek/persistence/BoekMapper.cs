@@ -149,5 +149,31 @@ namespace Bibliotheek.persistence
                 command.ExecuteNonQuery();
             }
         }
+
+        //Methode voor het zoeken van een boek op titel
+        public List<Boek> SearchBoekenByTitle(string title)
+        {
+            List<Boek> boeken = new List<Boek>();
+            using (var connection = new MySqlConnection(_connectionString))
+            using (var command = new MySqlCommand("SELECT * FROM tblboeken WHERE titel LIKE @Title", connection))
+            {
+                command.Parameters.AddWithValue("@Title", "%" + title + "%");
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Boek boek = new Boek
+                        {
+                            Boekid = reader.GetInt32("boekID"),
+                            Titel = reader.GetString("titel"),
+                            Auteur = reader.GetString("auteur")
+                        };
+                        boeken.Add(boek);
+                    }
+                }
+            }
+            return boeken;
+        }
     }
 }

@@ -11,8 +11,11 @@ namespace Bibliotheek.business
     {
         private BoekMapper _boekmapper;
         private GebruikerMapper _gebruikerMapper;
+        private LeningMapper _leningmapper;
         private List<Boek> _boekenlijst;
         private List<Gebruiker> _gebruikerslijst;
+        private List<Lening> _leningenlijst;
+
 
         public List<Boek> GetBoeken
         {
@@ -26,13 +29,21 @@ namespace Bibliotheek.business
             set { _gebruikerslijst = value; }
         }
 
+        public List<Lening> GetLeningen
+        {
+            get { return _leningenlijst; }
+            set { _leningenlijst = value; }
+        }
+
 
         public Controller()
         {
             _boekmapper = new BoekMapper();
             _gebruikerMapper = new GebruikerMapper();  
             _boekenlijst = _boekmapper.GetBoeken();
-            _gebruikerslijst = _gebruikerMapper.GetGebruikers(); 
+            _gebruikerslijst = _gebruikerMapper.GetGebruikers();
+            _leningmapper = new LeningMapper();
+            _leningenlijst = _leningmapper.GetLening();
         }
 
         public void AddBoek(int ISBN, int paginas, string titel, int genreID, string uitgever, string auteur, string taal, int graad)
@@ -40,6 +51,20 @@ namespace Bibliotheek.business
             _boekmapper.AddBoek(ISBN, paginas, titel, genreID, uitgever, auteur, taal, graad);
             _boekenlijst = _boekmapper.GetBoeken();
 
+        }
+
+        public void AddLening(int gebruikerID, int boekID, string datumin, string datumout)
+        {
+            try
+            {
+                _leningmapper.AddLening(gebruikerID, boekID, datumin, datumout);
+                _leningenlijst = _leningmapper.GetLening();
+            }
+            catch (Exception ex)
+            {
+                // Log de fout of geef een aangepaste foutmelding
+                throw new Exception("Er is een fout opgetreden tijdens het toevoegen van de lening.", ex);
+            }
         }
 
         public void AddGebruiker(string naam, string gebruikersnaam, string voornaam, string email, string wachtwoord, string rechtID)
@@ -176,6 +201,18 @@ namespace Bibliotheek.business
             catch (Exception ex)
             {
                 throw new Exception("Er is een fout opgetreden tijdens het verwijderen van het boek.", ex);
+            }
+        }
+
+        public void SearchBoeken(string zoekterm)
+        {
+            if (string.IsNullOrEmpty(zoekterm))
+            {
+                _boekenlijst = _boekmapper.GetBoeken();
+            }
+            else
+            {
+                _boekenlijst = _boekmapper.SearchBoekenByTitle(zoekterm);
             }
         }
 

@@ -1,0 +1,28 @@
+﻿@page
+@model WebApplicatieBibliotheek.Pages.OverzichtModel
+@{
+	<h1>Boekenlijst overzicht</h1>
+
+	<table class="table">
+	<thead>
+			<tr>
+				<th>Boek ID</th>
+				<th>Titel</th>
+				<th>Auteur</th>
+				<th>GenreID</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var boek in Model.boeken)
+			{
+				<tr>
+					<td>@boek.Boekid</td>
+					<td>@boek.Titel</td>
+					<td>@boek.Auteur</td>
+					<td>@boek.Genreid</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+

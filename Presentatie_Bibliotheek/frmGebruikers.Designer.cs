@@ -34,6 +34,7 @@
             lbGebruikers = new ListBox();
             btnRefresh = new Button();
             btnReturn = new Button();
+        
             SuspendLayout();
             // 
             // btnVoegToe
@@ -94,6 +95,10 @@
             btnReturn.UseVisualStyleBackColor = true;
             btnReturn.Click += btnReturn_Click;
             // 
+            // tbSearch
+            // 
+            
+            // 
             // frmGebruikers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -109,6 +114,7 @@
             Text = "frmGebruikers";
             Load += frmGebruikers_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

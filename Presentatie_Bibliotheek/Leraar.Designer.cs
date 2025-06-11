@@ -34,6 +34,8 @@
             btnUpdate = new Button();
             btnVerwijderen = new Button();
             btnGebruikers = new Button();
+            btnLogUit = new Button();
+            tbSearch = new TextBox();
             SuspendLayout();
             // 
             // lbOverzicht
@@ -94,11 +96,31 @@
             btnGebruikers.UseVisualStyleBackColor = true;
             btnGebruikers.Click += btnGebruikers_Click;
             // 
+            // btnLogUit
+            // 
+            btnLogUit.Location = new Point(667, 362);
+            btnLogUit.Name = "btnLogUit";
+            btnLogUit.Size = new Size(95, 54);
+            btnLogUit.TabIndex = 6;
+            btnLogUit.Text = "Log Uit";
+            btnLogUit.UseVisualStyleBackColor = true;
+            btnLogUit.Click += btnLogUit_Click;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Location = new Point(555, 242);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(233, 27);
+            tbSearch.TabIndex = 7;
+            tbSearch.TextChanged += tbSearch_TextChanged;
+            // 
             // Leeraar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tbSearch);
+            Controls.Add(btnLogUit);
             Controls.Add(btnGebruikers);
             Controls.Add(btnVerwijderen);
             Controls.Add(btnUpdate);
@@ -109,6 +131,7 @@
             Text = "Leeraar";
             Load += Leeraar_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -119,5 +142,7 @@
         private Button btnUpdate;
         private Button btnVerwijderen;
         private Button btnGebruikers;
+        private Button btnLogUit;
+        private TextBox tbSearch;
     }
 }

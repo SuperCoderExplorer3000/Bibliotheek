@@ -97,5 +97,33 @@ namespace Presentatie_Bibliotheek
             gebruikersForm.ShowDialog();
 
         }
+
+        private void btnLogUit_Click(object sender, EventArgs e)
+        {
+            //sluit het huidige formulier en gaat terug naar het inlogscherm
+            this.Close();
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Filter de lijst van boeken op basis van de zoekterm
+            string searchTerm = tbSearch.Text.ToLower();
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                lbOverzicht.DataSource = _controller.GetBoeken; // Toon alle boeken als de zoekterm leeg is
+            }
+            else
+            {
+                var boekengefilterd = _controller.GetBoeken
+                    .Where(b => b.Titel.ToLower().Contains(searchTerm) ||
+                                b.Auteur.ToLower().Contains(searchTerm) ||
+                                b.Uitgever.ToLower().Contains(searchTerm) ||
+                                b.Taal.ToLower().Contains(searchTerm))
+                    .ToList();
+                lbOverzicht.DataSource = boekengefilterd; // Toon de gefilterde lijst
+            }
+        }
     }
 }
